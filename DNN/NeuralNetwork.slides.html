@@ -12052,16 +12052,6 @@ $$relu(z) = max(0, z) $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Deep-Learning?">Deep Learning?<a class="anchor-link" href="#Deep-Learning?">&#182;</a></h4><p><img src="https://media.condenast.io/photos/59f36f317953d714f00d7706/master/pass/unnamed0.png" alt="alt text" title="nn"></p>
-<p>Neural networks are structured as a series of layers, each composed of one or more neurons. Each neuron produces an output, or activation, based on the outputs of the previous layer and a set of weights.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="What-does-Training-mean-in-NN">What does Training mean in NN<a class="anchor-link" href="#What-does-Training-mean-in-NN">&#182;</a></h3><hr>
 <p><strong> Training in NN means minimizing the cost (how big is the difference between our prediction and the true label) </strong></p>
 <ul>
@@ -12108,6 +12098,72 @@ we have to tweak the weights and bias in order to minimize the cost.</li>
 </div>
 </div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$
+\frac{\partial J}{\partial W^{(2)}} = \frac{\partial \sum \frac{1}{2}(y-\hat{y})^2}{\partial W^{(2)}}
+$$</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$
+\frac{\partial J}{\partial W^{(2)}} = -(y-\hat{y}) \frac{\partial \hat{y}}{\partial W^{(2)}}
+$$</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$
+\frac{\partial J}{\partial W^{(2)}} = 
+-(y-\hat{y})
+\frac{\partial \hat{y}}{\partial z^{(2)}}  
+\frac{\partial z^{(2)}}{\partial W^{(2)}}
+$$</p>
+
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$
+f(z) = \frac{1}{1+e^{-z}}
+$$
+<br/>
+$$
+f^\prime(z) = \frac{e^{-z}}{(1+e^{-z})^2}
+$$</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$
+\frac{\partial J}{\partial W^{(2)}}= 
+-(y-\hat{y}) f^\prime(z^{(2)}) \frac{\partial z^{(2)}}{\partial W^{(2)}}
+$$</p>
+<p>$$
+z^{(2)} = a^{(1)}W^{(2)} \tag{3}\\
+$$</p>
+
+</div>
+</div>
+</div><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13541,6 +13597,15 @@ ABlAUAYAAJABBGUAAAAZQFAGAACQAf8f9i6Tyde5AE0AAAAASUVORK5CYII=
 </div>
 </div>
 
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Deep-Learning?">Deep Learning?<a class="anchor-link" href="#Deep-Learning?">&#182;</a></h2><p><img src="https://media.condenast.io/photos/59f36f317953d714f00d7706/master/pass/unnamed0.png" alt="alt text" title="nn"></p>
+
+</div>
+</div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
