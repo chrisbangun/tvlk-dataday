@@ -11981,7 +11981,16 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><br/><img src="images/perceptron.png" alt="alt text" title="sigmoid_neuron_2"></p>
+<p><img src="images/perceptron.png" alt="alt text" title="sigmoid_neuron_2"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="images/modified_formula.png" alt="alt text" title="modified_perceptron_formula"></p>
 
 </div>
 </div>
@@ -11992,8 +12001,36 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h6 id="The-main-idea-was-to-define-an-algorithm-in-order-to-learn-the-values-of-the-weights-w-that-are-then-multiplied-with-the-input-features-in-order-to-make-a-decision-whether-a-neuron-fires-or-not.">The main idea was to define an algorithm in order to learn the values of the weights w that are then multiplied with the input features in order to make a decision whether a neuron fires or not.<a class="anchor-link" href="#The-main-idea-was-to-define-an-algorithm-in-order-to-learn-the-values-of-the-weights-w-that-are-then-multiplied-with-the-input-features-in-order-to-make-a-decision-whether-a-neuron-fires-or-not.">&#182;</a></h6><hr>
 <p><br/><br/>
-<img src="images/how_a_neuron_works.jpg" alt="alt text" title="how_a_neuron_works">
+<img src="images/how_a_neuron_works.jpg" alt="">
 <br/></p>
+<h5 id="perceptron-can-weigh-up-different-kinds-of-evidence-in-order-to-make-decisions">perceptron can weigh up different kinds of evidence in order to make decisions<a class="anchor-link" href="#perceptron-can-weigh-up-different-kinds-of-evidence-in-order-to-make-decisions">&#182;</a></h5>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="back-then,-a-perceptron-used-a-activation-function-(step-function)-called-the-Heaviside-step-function">back then, a perceptron used a activation function (step function) called the <em>Heaviside step function</em><a class="anchor-link" href="#back-then,-a-perceptron-used-a-activation-function-(step-function)-called-the-Heaviside-step-function">&#182;</a></h4><p><br/><br/>
+<img src="images/stepfn.png" width="270" height="200" border="10" />
+<br/></p>
+<h5 id="whose-value-is-zero-for-negative-argument-and-one-for-positive-argument">whose value is zero for negative argument and one for positive argument<a class="anchor-link" href="#whose-value-is-zero-for-negative-argument-and-one-for-positive-argument">&#182;</a></h5>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Multi-layer perceptrons are trained using backpropapagation. 
+A requirement for backpropagation is a differentiable activation function. That's because backpropagation uses gradient descent on this function to update the network weights.</li>
+</ul>
+<p><br/></p>
+<ul>
+<li>The Heaviside step function is non-differentiable at x = 0 and its derivative is 0 elsewhere. 
+This means gradient descent won't be able to make progress in updating the weights and backpropagation will fail.</li>
+</ul>
 
 </div>
 </div>
@@ -12005,9 +12042,13 @@ a.anchor-link {
 <h3 id="Activation-Functions">Activation Functions<a class="anchor-link" href="#Activation-Functions">&#182;</a></h3><hr>
 <p>Activation functions are important component in ANN.</p>
 <ul>
-<li>It helps the neuron to learn and make sense of something really complicated</li>
-<li>Non-linear complex functional mappings between the inputs and response variable. They introduce non-linear properties to our Network.</li>
-<li>Main purpose is to convert a input signal of a node to an output signal. That output signal now is used as a input in the next layer in the stack.</li>
+<li><strong>It helps the neuron to learn and make sense of something really complicated</strong>
+<br/>
+<br/></li>
+<li><strong>Non-linear complex functional mappings between the inputs and response variable. They introduce non-linear properties to our Network.</strong>
+<br/><br/></li>
+<li><strong>we'd like a small change in weight to cause only a small corresponding change in the output from the network</strong>
+<img src="images/learning.png" width="370" height="300" border="50" /></li>
 </ul>
 
 </div>
@@ -12042,6 +12083,8 @@ $$tanh(z) = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}} $$
 <p><h4> Rectified Linear Unit (ReLU)</h4>
 $$relu(z) = max(0, z) $$</p>
 <p><img src="images/ReLU.jpeg" alt="alt text" title="ReLU"></p>
+<h5 id="why-is-ReLU-non-linear?">why is ReLU non linear?<a class="anchor-link" href="#why-is-ReLU-non-linear?">&#182;</a></h5><p><br/>
+<img src="images/ReLU_2.png" alt="alt text" title="ReLU_2"></p>
 
 </div>
 </div>
@@ -12077,7 +12120,23 @@ we have to tweak the weights and bias in order to minimize the cost.</li>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h2> Learning Algorithms used in Neural Network </h2></p>
-<h3> Gradient Descent </h3><p><img src="images/gradient_descent.png" alt="alt text" title="gradient_descent"></p>
+<p><h3> Gradient Descent </h3>
+<em>compute the best direction along which we should change our weight vector that is mathematically guaranteed to be the direction of the steepest descend</em>
+<img src="images/gradient_descent.png" alt="alt text" title="gradient_descent"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>by updating the parameters in the opposite direction of the gradient of the objective function <strong>∇θJ(θ)</strong> w.r.t. to the parameters. The learning rate <strong>η</strong> determines the size of the steps we take to reach a (local) minimum.</p>
+</li>
+<li><p>In other words, we follow the direction of the slope of the surface created by the objective function downhill until we reach a valley.</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -12146,7 +12205,9 @@ $$</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$$
+<p><em>To find the rate of change of yHat with respect to z2, we need to differentiate our sigmoid activation function with respect to z.</em>
+<br/><br/>
+$$
 f(z) = \frac{1}{1+e^{-z}}
 $$
 <br/>
@@ -12168,10 +12229,29 @@ $$</p>
 <p>$$
 z^{(2)} = a^{(1)}W^{(2)} \tag{3}\\
 $$</p>
+<p>$$
+\frac{\partial J}{\partial W^{(2)}}= 
+-(y-\hat{y}) f^\prime(z^{(2)}) a^{(1)}
+$$</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">y_hat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">delta2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="o">-</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_hat</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoidPrime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">z2</span><span class="p">))</span>
+<span class="n">dJdW2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">a1</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">delta2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
